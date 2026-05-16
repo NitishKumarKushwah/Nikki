@@ -1,0 +1,22 @@
+.cursorDot,
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursorDot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-purple);
+  border-radius: 50%;
+}
+
+.cursorRing {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--foreground);
+  border-radius: 50%;
+}

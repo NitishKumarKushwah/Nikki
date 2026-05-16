@@ -1,0 +1,99 @@
+.toolkitSection {
+  padding: 120px 20px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floatingBlob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+/* Static blob variants — size/position predefined to prevent SSR inline style mismatches */
+.blob0 { width: 150px; height: 150px; top: 15%; left: 5%;  background: var(--accent-lime); }
+.blob1 { width: 210px; height: 210px; top: 30%; left: 23%; background: var(--accent-cyan); }
+.blob2 { width: 270px; height: 270px; top: 45%; left: 41%; background: var(--accent-lime); }
+.blob3 { width: 330px; height: 330px; top: 60%; left: 59%; background: var(--accent-cyan); }
+.blob4 { width: 390px; height: 390px; top: 75%; left: 77%; background: var(--accent-lime); }
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  margin-bottom: 80px;
+  font-weight: 800;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--accent-lime), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.toolCard {
+  position: relative;
+  padding: 20px 40px;
+  border-radius: 40px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--glass-shadow);
+  cursor: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.toolName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  z-index: 1;
+}
+
+.toolCard:hover .glow {
+  width: 150%;
+  height: 150%;
+  opacity: 0.2;
+}

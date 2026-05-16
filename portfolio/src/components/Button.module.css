@@ -1,0 +1,40 @@
+.button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: none; /* Inherit global none for custom cursor */
+  transition: box-shadow 0.3s ease;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+  color: white;
+  box-shadow: 0 4px 15px rgba(155, 81, 224, 0.4);
+}
+
+.primary:hover {
+  box-shadow: 0 6px 20px rgba(155, 81, 224, 0.6);
+}
+
+.secondary {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1.5px solid var(--foreground);
+}
+
+.outline:hover {
+  background: var(--foreground);
+  color: var(--background);
+}

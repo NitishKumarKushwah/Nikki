@@ -1,0 +1,48 @@
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--foreground);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 200px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(128, 128, 128, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--foreground);
+  transition: width 0.1s ease-out;
+}
+
+.progressText {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: rgba(128, 128, 128, 0.8);
+}

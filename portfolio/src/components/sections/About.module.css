@@ -1,0 +1,79 @@
+.aboutSection {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30vh; /* creates the scroll storytelling effect */
+}
+
+.paragraphContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 40px;
+  padding: 40px 50px;
+  transition: all 0.3s ease;
+}
+
+.paragraphContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.text {
+  flex: 1;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+.floatingShape {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  box-shadow: 0 10px 30px rgba(155, 81, 224, 0.3);
+  filter: blur(2px);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .paragraphContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+  
+  .right {
+    flex-direction: column;
+  }
+  
+  .container {
+    gap: 20vh;
+  }
+}

@@ -1,0 +1,81 @@
+.visionSection {
+  position: relative;
+  padding: 150px 20px;
+  background-color: transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.textStack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.textLine {
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--foreground);
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.abstractMesh {
+  position: absolute;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  filter: blur(60px);
+  z-index: 0;
+  opacity: 0.15;
+  animation: morph 8s ease-in-out infinite alternate;
+}
+
+.mesh1 {
+  width: 50vw;
+  height: 50vw;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  top: -10%;
+  left: -10%;
+}
+
+.mesh2 {
+  width: 40vw;
+  height: 40vw;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-lime));
+  bottom: -10%;
+  right: -10%;
+  animation-delay: -4s;
+}
+
+@keyframes morph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: rotate(0deg); }
+  100% { border-radius: 60% 40% 30% 70% / 60% 50% 40% 50%; transform: rotate(45deg); }
+}
