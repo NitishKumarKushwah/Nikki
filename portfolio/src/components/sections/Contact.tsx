@@ -18,7 +18,7 @@ export default function Contact() {
   return (
     <section className={styles.contactSection} id="contact">
       <div className={styles.container}>
-        <motion.div 
+        <motion.div
           className={styles.infoBox}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -29,20 +29,20 @@ export default function Contact() {
           <p className={styles.subtitle}>
             Available for freelance opportunities. If you have a project in mind, let's talk.
           </p>
-          
+
           <div className={styles.socials}>
             {contactInfo.socials.map((social) => {
               const IconComponent = iconMap[social.icon];
               return (
                 <a key={social.name} href={social.url} target="_blank" rel="noreferrer" className={styles.socialIcon} title={social.name}>
-                  {IconComponent && <IconComponent size={24} />}
+                  {IconComponent && <IconComponent className="w-6 h-6" />}
                 </a>
               );
             })}
           </div>
         </motion.div>
 
-        <motion.form 
+        <motion.form
           className={styles.form}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
